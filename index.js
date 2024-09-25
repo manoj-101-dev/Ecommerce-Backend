@@ -17,6 +17,10 @@ app.use(express.json()); // Parse JSON bodies
 // Load environment variables
 dotenv.config();
 
+app.get("/", (req, res) => {
+  res.status(200).send("Your service is live");
+});
+
 // Connect to MongoDB
 mongoose
   .connect(process.env.MONGO_URI)
